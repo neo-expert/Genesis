@@ -1,2 +1,13 @@
-/.idea/*.xml
+target/
+.project
+.settings/
+.idea
+cp/
+*.iml
+the-file-name
 *.class
+*.jar
+ecj-4.6.1.jar
+tags
+out/
+./java
