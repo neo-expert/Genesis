@@ -56,13 +56,15 @@ public class Gui extends JFrame implements Consts {
     public void init() {
         setTitle("Genesis 1.2.0");
         setSize(new Dimension(1800, 900));
+        /*
         Dimension sSize = Toolkit.getDefaultToolkit().getScreenSize(), fSize = getSize();
         if (fSize.height > sSize.height) fSize.height = sSize.height;
         if (fSize.width  > sSize.width) fSize.width = sSize.width;
         //setLocation((sSize.width - fSize.width)/2, (sSize.height - fSize.height)/2);
         setSize(new Dimension(sSize.width, sSize.height));
+         */
 
-        setDefaultCloseOperation (WindowConstants.EXIT_ON_CLOSE);
+        //setDefaultCloseOperation (WindowConstants.EXIT_ON_CLOSE);
         Container container = getContentPane();
 
         paintPanel.setLayout(new BorderLayout());// у этого лейаута приятная особенность - центральная часть растягивается автоматически
@@ -97,7 +99,7 @@ public class Gui extends JFrame implements Consts {
         perlinSlider.setMinorTickSpacing(80);
         perlinSlider.setPaintTicks(true);
         perlinSlider.setPaintLabels(true);
-        perlinSlider.setPreferredSize(new Dimension(100, perlinSlider.getPreferredSize().height));
+        perlinSlider.setPreferredSize(new Dimension(100, perlinSlider.getPreferredHeight()));
         perlinSlider.setAlignmentX(JComponent.LEFT_ALIGNMENT);
         toolbar.add(perlinSlider);
 
@@ -112,7 +114,7 @@ public class Gui extends JFrame implements Consts {
         sealevelSlider.setMinorTickSpacing(64);
         sealevelSlider.setPaintTicks(true);
         sealevelSlider.setPaintLabels(true);
-        sealevelSlider.setPreferredSize(new Dimension(100, sealevelSlider.getPreferredSize().height));
+        sealevelSlider.setPreferredSize(new Dimension(100, sealevelSlider.getPreferredHeight()));
         sealevelSlider.setAlignmentX(JComponent.LEFT_ALIGNMENT);
         toolbar.add(sealevelSlider);
 
@@ -128,7 +130,7 @@ public class Gui extends JFrame implements Consts {
 //        drawstepSlider.setMinorTickSpacing(64);
         drawstepSlider.setPaintTicks(true);
         drawstepSlider.setPaintLabels(true);
-        drawstepSlider.setPreferredSize(new Dimension(100, sealevelSlider.getPreferredSize().height));
+        drawstepSlider.setPreferredSize(new Dimension(100, sealevelSlider.getPreferredHeight()));
         drawstepSlider.setAlignmentX(JComponent.LEFT_ALIGNMENT);
         toolbar.add(drawstepSlider);
 
@@ -139,9 +141,9 @@ public class Gui extends JFrame implements Consts {
             toolbar.add(radioButton);
         }
 
-        this.pack();
+        //this.pack();
         this.setVisible(true);
-        setExtendedState(MAXIMIZED_BOTH);
+        //setExtendedState(MAXIMIZED_BOTH);
 
         drawstepSlider.addChangeListener(e -> {
             int ds = drawstepSlider.getValue();
@@ -171,4 +173,7 @@ public class Gui extends JFrame implements Consts {
             radioButton.addActionListener(radioListener);
         }
     }
+
+
+
 }

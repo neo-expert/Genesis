@@ -1,1 +1,5 @@
-public class Image{}
+public class Image{
+    public Graphics getGraphics() {
+        return null;
+    }
+}
